@@ -17,6 +17,9 @@ void Engine::StateMan::PopCurrent(){
 void Engine::StateMan::ProcessStateChange(){
     if(m_remove && (!m_stateStack.empty())){
         m_stateStack.pop();
+        if(m_stateStack.empty()){
+            m_stateStack.top()->Start();
+        }
     }
 
 }
