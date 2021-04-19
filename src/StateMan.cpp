@@ -20,8 +20,19 @@ void Engine::StateMan::ProcessStateChange(){
         if(m_stateStack.empty()){
             m_stateStack.top()->Start();
         }
+        m_remove = false;
     }
-
+    if(m_add){
+        if(m_replace && (!m_stateStack.empty())){
+            m_stateStack.pop();
+            m_replace = false;
+        }
+        if(!m_stateStack.empty()){
+            m_stateStack.top()->Pause();
+        }
+        m_stateStack.push(std::move(m_newState));
+        m_add = false;
+    }
 }
 std::unique_ptr<Engine::State>& Engine::StateMan::GetCurrent(){
     m_stateStack.top();
