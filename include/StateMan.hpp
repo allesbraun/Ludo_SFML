@@ -8,8 +8,8 @@
 namespace Engine{
     class StateMan{
         public:
-            StateMan();
-            ~StateMan();
+            StateMan();//construtor
+            ~StateMan();//destrutor
 
             void Add(std::unique_ptr<State> toAdd, bool replace = false);
             void PopCurrent();

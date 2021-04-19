@@ -6,8 +6,8 @@
 namespace Engine{
     class State{
         public:
-            State(){};
-            virtual ~State(){};
+            State(){};//construtor
+            virtual ~State(){};//destrutor
             
             virtual void Init() = 0;
             virtual void Process_Input() = 0;
