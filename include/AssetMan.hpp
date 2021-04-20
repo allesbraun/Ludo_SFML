@@ -8,6 +8,8 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Font.hpp>
 
+//deixar mais com jeito de get e set
+
 namespace Engine{
     class AssetMan{
         private:
